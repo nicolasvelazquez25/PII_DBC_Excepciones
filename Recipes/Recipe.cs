@@ -17,22 +17,44 @@ namespace Full_GRASP_And_SOLID
 
         public void AddStep(Step step)
         {
+            //Precondicion
             if (step == null)
             {
                 throw new Exception("Se debe ingresar un paso válido");
             }
             
+            //Invariante
+            int oldAmountSteps = steps.Count; 
+
+            //Operacion            
             this.steps.Add(step);
+
+            //Poscondicion
+            if (!(steps.Count == oldAmountSteps + 1))
+            {
+                throw new Exception("No se elimino correctamente el paso solicitado");
+            }
         }
 
         public void RemoveStep(Step step)
         {
+            //Precondicion
             if (!steps.Contains(step))
             {
                 throw new Exception("Se debe ingresar un paso que ya este agregado");
             }
 
+            //Invariante
+            int oldAmountSteps = steps.Count; 
+
+            //Operacion
             this.steps.Remove(step);
+        
+            //Poscondicion
+            if (!(steps.Count == oldAmountSteps - 1))
+            {
+                throw new Exception("No se elimino correctamente el paso solicitado");
+            }
         }
 
         public void PrintRecipe()
