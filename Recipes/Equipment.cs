@@ -10,17 +10,29 @@ namespace Full_GRASP_And_SOLID
     {
         public Equipment(string description, double hourlyCost)
         {
+            //Precondicion
             if (string.IsNullOrEmpty(description))
             {
                 throw new System.Exception("Ingrese una descripción válida");
             }
+
+            //Operacion
             this.Description = description;
 
+            //Poscondicion
+
+
+            //Precondicion
             if (hourlyCost <= 0)
             {
                 throw new System.Exception("No puede ingresar cantidades negativas o iguales a cero");
             }
+
+            //Operacion
             this.HourlyCost = hourlyCost;
+        
+            //Poscondicion
+
         }
 
         public string Description { get; set; }
