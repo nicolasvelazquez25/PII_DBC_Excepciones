@@ -21,18 +21,15 @@ namespace Full_GRASP_And_SOLID
             if (step == null)
             {
                 throw new Exception("Se debe ingresar un paso válido");
-            }
-            
+            } 
             //Invariante
             int oldAmountSteps = steps.Count; 
-
             //Operacion            
             this.steps.Add(step);
-
             //Poscondicion
             if (!(steps.Count == oldAmountSteps + 1))
             {
-                throw new Exception("No se elimino correctamente el paso solicitado");
+                throw new Exception("No se agregó correctamente el paso solicitado");
             }
         }
 
@@ -53,7 +50,7 @@ namespace Full_GRASP_And_SOLID
             //Poscondicion
             if (!(steps.Count == oldAmountSteps - 1))
             {
-                throw new Exception("No se elimino correctamente el paso solicitado");
+                throw new Exception("No se eliminó correctamente el paso solicitado");
             }
         }
 
